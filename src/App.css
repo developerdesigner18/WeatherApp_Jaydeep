@@ -1,0 +1,112 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+div#root {
+  background: #020000;
+}
+.city_temp {
+  display: flow-root;
+  color: #d1cbca;
+  padding: 6px;
+}
+select {
+  padding: 5px;
+  color: #000;
+  font-size: 12px;
+  background: transparent !important;
+  -webkit-appearance: none;
+}
+select option {
+  background-color: rgba(0, 0, 0, 0.9);
+  opacity: 0.2 !important ;
+}
+select.form-select {
+  margin-bottom: 30px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: -4px;
+  border: none;
+  min-width: 10em;
+  padding: 0.5em 1em;
+  background: transparent;
+  color: #a3d4e7;
+  font: inherit;
+  border-radius: 0;
+  padding-left: 0;
+  border-bottom: 1px solid;
+  font-size: 20px;
+}
+.form-select:focus {
+  border-color: none;
+}
+.city-img {
+  position: absolute;
+  bottom: 72px;
+  display: flex;
+  color: #a3d4e7;
+  margin: 33px;
+  align-items: center;
+  margin-left: 135px;
+}
+.me-auto.navbar-nav {
+  justify-content: space-between;
+  width: 100%;
+}
+.form-select:focus {
+  border-color: #fdfeff;
+}
+.error {
+  color: red;
+}
+button.btn.btn-outline-dark.w-100.btn {
+  background-color: #2e6276;
+  color: white;
+}
+.navbar-expand-lg {
+  justify-content: space-between !important;
+}
+
+.navbar_holder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.bg-opacity-10 {
+  --bs-bg-opacity: 0.5 !important;
+}
