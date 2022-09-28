@@ -7,7 +7,7 @@ import weather from "../images/rain-window-dark-water-raindrop-wet-drip-sad-drop
 import Default from "../images/lightning-1158027_960_720.jpg";
 
 export default function Data() {
-  const [text, setText] = useState();
+  const [text, setText] = useState("surat");
   const [city, setCity] = useState();
   const date = new Date().toLocaleDateString();
 
@@ -42,7 +42,7 @@ export default function Data() {
             borderRadius: "22px",
           }}
         > */}
-      <div className="row m-0">
+      <div className="row m-0 weather_details_row">
         <div className="col-md-6 col-sm-12 p-0">
           {city?.name?.length > 0 && city?.weather[0]?.main === "Rain" ? (
             <img
@@ -91,7 +91,7 @@ export default function Data() {
                       fontSize: "35px",
                       fontWeight: "600px",
                       float: "left",
-                      padding: "15px 10px",
+                      padding: "15px 40px",
                     }}
                   >
                     {city?.name}
@@ -138,9 +138,11 @@ export default function Data() {
         </div>
         <div className="col-md-6 col-sm-12 p-0">
           <div
+            className="weather_details"
             style={{
-              backgroundColor: "rgb(8 8 8 / 50%)",
-              height: "89vh",
+              backgroundColor: "rgba(8, 8, 8, 0.9)",
+              height: "calc(100vh - 66px)",
+              marginTop: "66px",
               opacity: "1",
             }}
           >
@@ -149,7 +151,6 @@ export default function Data() {
                 style={{ boxShadow: "none" }}
                 onChange={(e) => setText(e.target.value)}
               >
-                <option value="">---- Select Value ----</option>
                 <option value="surat">Surat</option>
                 <option value="mumbai">Mumbai</option>
                 <option value="Pune">Pune</option>

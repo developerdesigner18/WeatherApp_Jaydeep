@@ -32,8 +32,10 @@ export default function Register() {
       setError({ ...error, email: "Enter Your Email" });
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
       setError({ ...error, email: "Invalid Email" });
-    } else if (!password || password.length < 5) {
+    } else if (!password) {
       setError({ ...error, password: "Enter Your password" });
+    } else if (password.length < 5) {
+      setError({ ...error, password: "Minimum Five character Add" });
     } else {
       const formdata = { name, email, password };
       const newData = [...data];
@@ -59,15 +61,8 @@ export default function Register() {
           borderRadius: "22px",
         }}
       > */}
-      <div
-        style={{
-          width: "50%",
-          margin: "0 auto",
-          textAlign: "center",
-        }}
-      ></div>
-      <div className="row m-0">
-        <div className="col-md-7 col-sm-12 p-0">
+      <div className="row m-0 mobile_content_row" style={{ width: "100%" }}>
+        <div className="col-lg-7 col-md-6 col-sm-12 p-0">
           <img
             src={images}
             style={{ width: "100%", height: "100vh", objectFit: "cover" }}
@@ -75,32 +70,39 @@ export default function Register() {
           />
         </div>
         <div
-          className="col-md-5 col-sm-12 p-0"
+          className="col-lg-5 col-md-6 col-sm-12 p-0 mobile_content"
           style={{
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
           }}
         >
-          <img
-            src={logo}
-            alt=""
+          <div
             style={{
-              height: 50,
-              width: "50px",
-              marginLeft: "180px",
-              marginBottom: "-50px",
-            }}
-          />
-          <h1
-            style={{
-              textAlign: "center",
-              color: "#a3d4e7",
-              marginLeft: "47px",
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
             }}
           >
-            Register{" "}
-          </h1>
+            <img
+              src={logo}
+              alt=""
+              style={{
+                height: 50,
+                width: "50px",
+              }}
+            />
+            <h1
+              style={{
+                textAlign: "center",
+                color: "#a3d4e7",
+                marginLeft: "3px",
+              }}
+            >
+              Register{" "}
+            </h1>
+          </div>
+
           <Form style={{ margin: "0 auto", width: "80%" }}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label style={{ color: "#a3d4e7" }}>Name</Form.Label>
@@ -144,20 +146,30 @@ export default function Register() {
               variant=""
               type="submit"
               onClick={submit}
-              className="btn btn-outline-dark w-100"
-              style={{ marginBottom: "10px", fontWeight: "600" }}
+              className="btn btn-outline-dark w-80"
+              style={{
+                fontWeight: "600",
+                margin: "0 auto 10px",
+                display: "block",
+                backgroundColor: "#2e6276",
+                color: "white",
+                width: "30%",
+                padding: "8px",
+              }}
             >
               SUBMIT
             </Button>
             <Link
               to="/"
               style={{
-                margin: "38%",
+                width: "100%",
+                textAlign: "center",
+                display: "inline-block",
                 color: "black",
                 textDecoration: "none",
               }}
             >
-              <b style={{ color: "white" }}>Back to Login</b>
+              <b style={{ color: "white", fontWeight: "400" }}>Back to Login</b>
             </Link>
           </Form>
         </div>

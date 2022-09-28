@@ -81,7 +81,7 @@ select.form-select {
   color: #a3d4e7;
   margin: 33px;
   align-items: center;
-  margin-left: 135px;
+  margin-left: 100px;
 }
 .me-auto.navbar-nav {
   justify-content: space-between;
@@ -109,4 +109,51 @@ button.btn.btn-outline-dark.w-100.btn {
 }
 .bg-opacity-10 {
   --bs-bg-opacity: 0.5 !important;
+}
+.weather_details {
+  width: 100% !important;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.weather_details form {
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 1024px) {
+  .city-img > div {
+    display: inline-flex;
+    flex-direction: column;
+  }
+  .city-img > div p {
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .city-img > div {
+    display: inline-flex;
+    flex-direction: column;
+  }
+  .city-img > div p {
+    padding: 0 !important;
+  }
+}
+@media (max-width: 767px) {
+  .weather_details_row img {
+    width: 100% !important;
+  }
+  .mobile_content_row {
+    position: relative;
+  }
+  .mobile_content_row .mobile_content {
+    width: 95% !important;
+    padding: 40px 15px !important;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto !important;
+  }
 }

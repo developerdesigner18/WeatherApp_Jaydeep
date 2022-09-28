@@ -1,6 +1,6 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Header from "./Header";
 import images from "../images/dark.jpeg";
 import logo from "../simple.png";
@@ -44,9 +44,9 @@ function Login() {
           position: toast.POSITION.TOP_CENTER,
         });
       } else {
-        // toast.success("Login Sucessfully !", {
-        //   position: toast.POSITION.TOP_CENTER,
-        // });
+        toast.success("Login Sucessfully !", {
+          position: toast.POSITION.TOP_CENTER,
+        });
         localStorage.setItem("formdata", JSON.stringify(found));
         navigate("/data");
       }
@@ -74,8 +74,8 @@ function Login() {
         }}
       ></div>
 
-      <div className="row m-0" style={{ width: "100%" }}>
-        <div className="col-md-7 col-sm-12 p-0">
+      <div className="row m-0 mobile_content_row" style={{ width: "100%" }}>
+        <div className="col-lg-7 col-md-6 col-sm-12 p-0">
           <img
             src={images}
             className="image"
@@ -83,32 +83,38 @@ function Login() {
           />
         </div>
         <div
-          className="col-md-5 col-sm-12 p-0"
+          className="col-lg-5 col-md-6 col-sm-12 p-0 mobile_content"
           style={{
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
           }}
         >
-          <img
-            src={logo}
-            alt=""
+          <div
             style={{
-              height: 50,
-              width: "50px",
-              marginLeft: "190px",
-              marginBottom: "-50px",
-            }}
-          />
-          <h1
-            style={{
-              textAlign: "center",
-              color: "#a3d4e7",
-              marginLeft: "12px",
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
             }}
           >
-            Login
-          </h1>
+            <img
+              src={logo}
+              alt=""
+              style={{
+                height: 50,
+                width: "50px",
+              }}
+            />
+            <h1
+              style={{
+                textAlign: "center",
+                color: "#a3d4e7",
+                marginLeft: "2px",
+              }}
+            >
+              Login
+            </h1>
+          </div>
           <br></br>
           <Form style={{ margin: "0 auto", width: "80%" }}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -142,8 +148,16 @@ function Login() {
             <Button
               variant=""
               type="submit"
-              className="btn btn-outline-dark w-100"
-              style={{ marginBottom: "10px", fontWeight: "600" }}
+              className="btn btn-outline-dark w-80"
+              style={{
+                fontWeight: "600",
+                margin: "0 auto 10px",
+                display: "block",
+                backgroundColor: "#2e6276",
+                color: "white",
+                width: "30%",
+                padding: "8px",
+              }}
               onClick={logindata}
             >
               SUBMIT
@@ -152,7 +166,9 @@ function Login() {
             <Link
               to="/register"
               style={{
-                margin: "9%",
+                display: "inline-block",
+                textAlign: "center",
+                width: "100%",
                 color: "white",
                 textDecoration: "none",
               }}
