@@ -1,11 +1,11 @@
-import { Navigate, useNavigate } from "react-router-dom";
-import React, { Children } from "react";
+import { Navigate } from "react-router-dom";
+import React from "react";
 export default function Protected({ children }) {
-  const navigate = useNavigate();
-  let login = localStorage.getItem("formdata");
+  let login = JSON.parse(localStorage.getItem("formdata"));
 
   if (!login) {
     return <Navigate to="/" replace />;
+  } else {
+    return children;
   }
-  return children;
 }

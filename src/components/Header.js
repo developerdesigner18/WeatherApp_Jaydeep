@@ -30,7 +30,6 @@ function Header() {
       >
         <img src={logo} alt="" style={{ height: 50 }} />
         <Navbar.Brand
-          href="/data"
           style={{ fontFamily: "cursive", padding: "5px", color: "#a3d4e7" }}
         >
           Weather

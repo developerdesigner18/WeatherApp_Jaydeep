@@ -1,20 +1,26 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import images from "../images/dark.jpeg";
 import logo from "../simple.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
 function Login() {
   const navigate = useNavigate();
+
   // let login = localStorage.getItem("form");
   // useEffect(() => {
   //   if (login) {
   //     navigate("/data");
   //   }
   // }, []);
+
+  useEffect(() => {
+    let login = JSON.parse(localStorage.getItem("formdata"));
+    if (login) navigate("/data");
+  }, []);
 
   const [emaildata, setEmailData] = useState(null);
   const [passworddata, setPasswordData] = useState(null);
@@ -116,6 +122,7 @@ function Login() {
             </h1>
           </div>
           <br></br>
+
           <Form style={{ margin: "0 auto", width: "80%" }}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label style={{ color: "#a3d4e7" }}>
